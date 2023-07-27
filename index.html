@@ -1,0 +1,451 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravency</title>
+    
+    
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    
+    <!-- <script src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+    <script type="application/importmap+json">
+      {
+        "imports": {
+        "three": "https://unpkg.com/three@"v0.149.0"/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@"v0.149.0"/examples/jsm/"
+        }
+      }
+    </script> -->
+
+
+</head>
+<body>
+  
+  <div id="canvas-container" ></div>
+  <!-- <div id="trailer">
+    <span id="trailer-text">View</span>
+  </div> -->
+
+  <header>
+    <nav class="navbar">
+
+      <div class="logo-box">
+        <a href="#" id="logo">ravency.</a>
+      </div>
+      
+
+      <div class="menu-box">
+        <a href="#" id="contact-btn">Kontakt</a>
+
+      <div onclick="openNav()" class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="mySidenav" class="sidenav">
+        <div class="menu-items">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="social-items">
+        <a href="">Instagram &#8599;</a>
+        <a href="">Twitter &#8599;</a>
+        <a href="">LinkedIn &#8599;</a>
+        <a href="">Facebook &#8599;</a>
+      </div>
+      </div>
+      </div>
+
+      
+
+    </nav>
+  </header>   
+
+
+<section class="hero-wrapper">
+<div class="hero_section">
+  <!-- <div id="blob"></div>
+  <div class="blob2" id="mobile_only"></div>
+  <div id="blur"></div> -->
+  <!-- <div class="slider" id="mobile_only">
+
+    <div class="slide-track">
+      <div class="slide">
+        <p class="slider_text">&nbsp;BRANDING&nbsp;&nbsp;—&nbsp;&nbsp;MARKETING&nbsp;&nbsp;—&nbsp;&nbsp;WEBDESIGN&nbsp;&nbsp;—&nbsp;&nbsp;WERBETECHNIK&nbsp;&nbsp;—</p>
+      </div>
+      <div class="slide">
+        <p class="slider_text">&nbsp;&nbsp;BRANDING&nbsp;&nbsp;—&nbsp;&nbsp;MARKETING&nbsp;&nbsp;—&nbsp;&nbsp;WEBDESIGN&nbsp;&nbsp;—&nbsp;&nbsp;WERBETECHNIK&nbsp;&nbsp;—</p>
+      </div>
+      <div class="slide">
+        <p class="slider_text">&nbsp;&nbsp;BRANDING&nbsp;&nbsp;—&nbsp;&nbsp;MARKETING&nbsp;&nbsp;—&nbsp;&nbsp;WEBDESIGN&nbsp;&nbsp;—&nbsp;&nbsp;WERBETECHNIK&nbsp;&nbsp;—</p>
+      </div>
+      <div class="slide">
+        <p class="slider_text">&nbsp;&nbsp;BRANDING&nbsp;&nbsp;—&nbsp;&nbsp;MARKETING&nbsp;&nbsp;—&nbsp;&nbsp;WEBDESIGN&nbsp;&nbsp;—&nbsp;&nbsp;WERBETECHNIK&nbsp;&nbsp;—</p>
+      </div>
+      <div class="slide">
+        <p class="slider_text">&nbsp;&nbsp;BRANDING&nbsp;&nbsp;—&nbsp;&nbsp;MARKETING&nbsp;&nbsp;—&nbsp;&nbsp;WEBDESIGN&nbsp;&nbsp;—&nbsp;&nbsp;WERBETECHNIK&nbsp;&nbsp;—</p>
+      </div>
+      
+    </div> -->
+</div> 
+  <div id="hero-headline">
+    
+    <h1 id="hero-text">RAVENCY</h1>
+    <h1 id="hero-text-black-color">CREATIVE</h1>
+    <h1 id="hero-text">AGENCY</h1>
+  </div>
+  <!-- <div id="hero-subline">
+    <p>Fuel the world with the next big idea</p>
+    <button>&rarr;</button>
+  </div> -->
+  
+</div>
+</div>
+<div id="circular-div">
+    <div class="circle">
+      <div class="text">
+        <p class = 'animation-text'> - LET'S WORK TOGETHER - LET'S WORK TOGETHER</p>
+      </div>
+       <div class="arrow-button">
+          <button class="hero-arrow-button" >&rarr;</button>
+        </div>
+      <script>
+        const text = document.querySelector('.text p');
+        text.innerHTML = text.innerText.split('').map(
+          (char, i) =>
+          `<span style="transform:rotate(${i * 8.3}deg)" >${char}</span>`
+        ).join('');
+        
+         const circle = document.querySelector(".circle");
+        const innerText = document.querySelector(".text");
+        const arrowButton = document.querySelector(".arrow-button");
+
+        circle.onpointerover = function() {
+        innerText.style.color = "green";
+        arrowButton.style.transform = "rotate(-30deg)";
+        arrowButton.style.color = "green"
+        circle.style.backgroundColor = "#f0e15c";
+        };
+
+        circle.onpointerout = function() {
+        innerText.style.color = "#fff";
+        arrowButton.style.transform = "";
+        arrowButton.style.color = "#fff"
+        circle.style.backgroundColor = "#000";
+        };
+
+      
+      </script>
+    </div>
+</div>
+<div class="hero-section-text-wrapper">
+  <div class = 'herosection-text' >
+    <div class="intro-content">
+      <div class="intro-content-text">
+        <span class="intro-content-text-heading">DESIGN-DRIVEN</span>
+        <span>AGENCY</span>
+      </div>
+       <div class="intro-content-text">
+        <span class="intro-content-text-heading">SAY HI</span>
+        <span>EMAIL@GMAIL.COM</span>
+       </div>
+    </div>
+    <div class="intro-para">
+      <span class="intro-para-span">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempora quos quam sed odit, soluta, 
+        tempore reiciendis corporis dolor debitis, 
+      </span>
+    </div>
+  </div>
+</div>
+
+
+</section>
+
+
+
+<!-- <section class="video_section">
+  <div class="rect">
+    <video src="media/1.mp4" autoplay muted loop></video>
+  </div>
+  <div class="video-text">
+    <p>SCROLL DOWN</p>
+  </div>
+</section> -->
+
+<section class="mobile-video_container" id="mobile_only">
+  <div class="mobile-video-wrapper">
+    <a href="work.html">Discover our work</a>
+       <video id="fullscreen-video" autoplay loop muted>
+          <source src="media/1.mp4" type="video/mp4">
+      </video>
+  </div>
+  
+</section>
+
+ <section class="information-container">
+  <div class="info">
+    <h2>Wir sind ravency.</h2>
+  </div>
+  <div class="info-2">
+    <p id="info-p">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+    </p>
+  </div>
+  <div class="info-buttons">
+    <a href="">Portfolio &rarr;</a>
+    <a href="" id="info-btn2">Über uns &rarr;</a>
+  </div>
+</section> 
+
+
+
+
+
+<section class="main">
+  
+  <!-- <div class="category">
+      <nav class="menu">
+        <div class="category_headline">
+          <h3>OUR SERVICE</h3>
+        </div>
+        <div class="menu__item">
+          <a class="menu__item-link" id="branding">BRANDING</a>
+          <img class="menu__item-img" src="assets/img_01.png" alt="Some image"/>
+          <div class="marquee">
+            <div class="marquee__inner" aria-hidden="true">
+              <span>LOGO DESIGN - </span>
+              <span>STARKE MARKE - </span>
+              <span>TYPOGRAFIE - </span>
+              <span>BRAND IDENTITY - </span>
+            </div>
+          </div>
+        </div>
+        <div class="menu__item">
+          <a class="menu__item-link" id="webdesign">WEBDESIGN</a>
+          <img class="menu__item-img" src="assets/img_02.png"/>
+          <div class="marquee">
+            <div class="marquee__inner" aria-hidden="true">
+              <span>DEVELOPMENT -</span>
+              <span>DESIGN - </span>
+              <span>STYLE - </span>
+              <span>PERFORMANCE - </span>
+            </div>
+          </div>
+        </div>
+        <div class="menu__item">
+          <a class="menu__item-link" id="marketing">MARKETING</a>
+          <img class="menu__item-img" src="assets/img_03.jpeg" alt="Some image"/>
+          <div class="marquee">
+            <div class="marquee__inner" aria-hidden="true">
+              <span>SEO & SEA - </span>
+              <span>ONLINE MARKETING - </span>
+              <span>CONTENT MARKETING - </span>
+              <span>SOCIAL MEDIA - </span>
+            </div>
+          </div>
+        </div>
+        <div class="menu__item">
+          <a class="menu__item-link" id="werbetechnik">WERBETECHNIK</a>
+          <img class="menu__item-img" src="assets/img_07.png" alt="Some image"/>
+          <div class="marquee">
+            <div class="marquee__inner" aria-hidden="true">
+              <span>DURCK - </span>
+              <span>BESCHRIFTUNG - </span>
+              <span>DISPLAY SYSTEME - </span>
+              <span>VEHICLE WRAPPING</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+  </div> -->
+
+ 
+<div class="portfolio-container">
+  <div class="portfolio-item" id="item1">
+    <a href="/project1.html"><h3 class="hover-underline-animation">
+      <span>FUTURE</span> 
+      <br />
+      <span>GREEN</span>
+      <br />
+      <span>STEPS</span>
+    </h3>
+  </a>
+    <a href="project1.html"><img src="assets/dlc-hero-home.jpg" alt="" class="interactable" id="bild1"  data-type="link"></a>
+    <p>BRANDING</p>
+    
+  </div>
+
+  <div class="portfolio-item" id="item2">
+    <p>MARKETING</p>
+    <a href="project1.html"><img src="assets/fgs-hero-home.jpg" alt="" class="interactable" id="bild2" data-type="link"></a>
+    <a href="project1.html"><h3 class="hover-underline-animation">
+      <span>ASTON</span> 
+      <br />
+      <span>CM</span>
+    </h3>
+  </a>
+  </div>
+
+  <div class="portfolio-item" id="item3" >
+    <a href="project1.html"><h3 class="hover-underline-animation">
+  
+      <span>DISCOVERY</span> 
+      <br />
+      <span>LAND</span>
+      <br />
+      <span>CO</span>
+      
+    </h3>
+  </a>
+    <a href="project1.html"><img src="assets/aston-hero-home.jpg" alt="" class="interactable" id="bild3" data-type="link"></a>
+    <p>BRANDING, MARKETING</p>
+    
+  </div>
+</div>
+</section>
+
+<section class="service_section">
+<div class="service-container">
+  <div class="service-border"></div>
+  <div class="service-title">
+    <div class="sticky-box">OUR SERVICE.</div>
+  </div>
+  <div class="service-content">
+    <div class="service-item">
+      <h3 data-type="link">01. Branding</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nam
+      reiciendis unde magni eligendi excepturi maxime nulla adipisci,
+      veniam officiis, explicabo commodi laboriosam blanditiis repellendus
+      quidem debitis ab! Aliquid, facere. Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit.</p>
+    </div>
+    
+
+    <div class="service-item">
+      <div class="service-item-border"></div>
+      <h3>02. Webdesign</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nam
+      reiciendis unde magni eligendi excepturi maxime nulla adipisci,
+      veniam officiis, explicabo commodi laboriosam blanditiis repellendus
+      quidem debitis ab! Aliquid, facere. Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-item-border"></div>
+      <h3>03. Online Marketing</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nam
+      reiciendis unde magni eligendi excepturi maxime nulla adipisci,
+      veniam officiis, explicabo commodi laboriosam blanditiis repellendus
+      quidem debitis ab! Aliquid, facere. Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit.</p>
+    </div>
+    <div class="service-item">
+      <div class="service-item-border"></div>
+      <h3>04. Werbetechnik</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nam
+      reiciendis unde magni eligendi excepturi maxime nulla adipisci,
+      veniam officiis, explicabo commodi laboriosam blanditiis repellendus
+      quidem debitis ab! Aliquid, facere. Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit.</p>
+    </div>
+  </section>
+ 
+  <section class="carousel_section">
+    <div class="service-carousel">
+      <h2>SELECTED WORK</h2>
+    </div>
+    <div class="carousel" data-flickity='{ "freeScroll": true }'>
+      <div class="carousel-cell" id="first-cell" >
+        <img src="assets/montblanc-pen.jpg" alt="">
+        <h3>Montblanc-Pen</h3>
+      </div>
+      <div class="carousel-cell" id="second-cell" >
+        <img src="assets/alpine_cure_content.jpg" alt="">
+        <h3>Alpine Cure</h3>
+      </div>
+      <div class="carousel-cell" id="second-cell" >
+        <img src="assets/qwerbeet_shield.jpg" alt="">
+        <h3>Qwerbeet</h3>
+      </div>
+      <div class="carousel-cell" id="first-cell" >
+        <img src="assets/irmingardis.jpg" alt="">
+        <h3>Irmengardis</h3>
+      </div>
+      <div class="carousel-cell" id="first-cell" >
+        <img src="assets/aston-hero-home.jpg" alt="">
+        <h3>Placeholder</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="brands-section">
+  <div class="brands-container">
+    <div class="brands-border"></div>
+    <div class="brands-text">OUR CLIENTS.</div>
+        <div class="brands-item">
+          <img src="assets/EHM.png" alt="erwinhymermusuem">
+          <img src="assets/alpine_cure.png" alt="alpine cure">
+          <img src="assets/family_activities.png" alt="family activities">
+          <img src="assets/feddz.png" alt="feddz">
+          <img src="assets/haus_irmengardis.png" alt="irmengardis">
+          <img src="assets/KSK.png" alt="kreissparkasse">
+          <img src="assets/pucci.png" alt="pucci">
+          <img src="assets/qwerbeet.png" alt="qwerbeet">
+          <img src="assets/se_kruger.png" alt="se_kruger">
+          <img src="assets/autohaus_schmid.png" alt="schmid">
+          <img src="assets/diesch.png" alt="diesch">
+          <img src="assets/daschu.png" alt="daschu">
+          <img src="assets/kieswerk_rieger.png" alt="rieger">
+          <img src="assets/kolesch.png" alt="koelch">
+          <img src="assets/langolo.png" alt="langolo">
+          <img src="assets/versicherungsbuero_buck.png" alt="vs buck">
+         
+      </div>
+    </div>
+      
+    </section>
+
+  
+    <footer>
+      <div class="cta-contact">
+        <a href="contact.html" class="interactable cta-action"><h2>Neues Projekt?</h2></a>
+        <div>
+          <a href="contact.html" class="interactable cta-action white-underline"><h3>Erzähl uns mehr</h3></a>
+        </div>
+        
+      </div>
+      <div class="social">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+      </div>
+      <div class="contact">
+        <p>Email: contact@example.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+      </div>
+      <div class="privacy">
+        <a href="#">Privacy Information</a>
+      </div>
+    </footer>
+
+  <script src="script.js"></script>
+  <script type="module" src="main.js"></script>
+  
+</body>
+</html>
